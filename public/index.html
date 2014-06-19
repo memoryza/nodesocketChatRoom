@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title>聊天室</title>
+		<meta content="text/html;charset=utf-8">
+		<meta description="基于node的聊天室;">
+		<style>
+			body{font-size: 12px;}
+			.chat_room{width: 80%;margin: 0 auto;}
+			.chat_room .name{background-color:#ccc;height: 20px;font-size: 18px;}
+			.chat_room .left{width: 70%;border:0;height: 300px;float:left;background-color: #eee;border-radius: 5px;margin-top: 10px;}
+			.chat_room .right {width: 28%;border:0;height:300px;float: right;right: 0;background-color: #ddd;border-radius: 5px;margin-top: 10px;}
+			.chat_room .right p{padding:5px 2px 0 10px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+ 
+			.chat_room .send_content {width: 80%;margin: 10px 10px 0 0;}
+			.chat_room .send_btn {width: 15%; }
+			.chat_room .cmd_list{list-style: none;}
+		</style>
+	</head>
+	<body>
+		<div class="chat_room">
+			<div class="name" id="room">memoryza</div>
+			
+			<div class="left" id="messageList"></div>
+			<div class="right">
+				<p>我是列表1</p>
+				<p>我是列表2</p>
+				<p>我是列表3</p>
+				<p>我是列表4</p>
+				<p>我是列表5</p>
+			</div>
+			<div class="send">
+				<input name="content" class="send_content"/>
+				<input type="button"  class="send_btn" value="发送"/>
+			</div>
+			<div>
+				<ul class="cmd_list">
+					<li>通过”/nick 你的名字 ”可以修改你的昵称</li>
+					<li>通过”/join 聊天室名称 ”切换聊天室</li>
+				</ul>
+			</div>
+		</div>	
+	</body>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src=".jquery.min"></script>
+	<script type="text/javascript" src=".chat"></script>
+	<script type="text/javascript" src=".chat_ui"></script>
+</html>
